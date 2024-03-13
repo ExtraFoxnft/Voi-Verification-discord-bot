@@ -1,5 +1,3 @@
-Sure, here's the README.md text without the code shells:
-
 ---
 
 # Discord NFT Ownership Verifier
@@ -17,7 +15,11 @@ This is a Discord bot that verifies ownership of NFTs (Non-Fungible Tokens) on a
 1. Clone the repository to your local machine:
    
 2. Install the required dependencies:
-   
+pip install discord
+pip install requests
+pip install python-dotenv
+pip install algosdk
+
 3. Create a `.env` file in the root directory of the project and provide the following environment variables:
 
     ```
