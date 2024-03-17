@@ -1,0 +1,20 @@
+# Changelog
+
+## [Alpha v0.2]
+
+### Added
+- Asynchronous calls to the NFT indexer API using `aiohttp` instead of synchronous `requests`.
+- A dictionary `user_wallets` to map user IDs to their wallet addresses, ensuring one wallet per user.
+- Role removal functionality to the `verify` command, which removes roles from users if they no longer hold the corresponding NFTs.
+- Error handling for HTTP requests and Discord operations.
+
+### Changed
+- Replaced the `get_tokens_owned` function with an asynchronous version to improve performance.
+- Updated the `verify` command to use the new asynchronous API calls and role management logic.
+- The bot now stores a list of creator tokens upon startup, which is used for verifying user-owned tokens.
+
+### Removed
+- Direct calls to external metadata URIs for each token, which was outside the scope of the bot's verification process.
+
+### Fixed
+- The role assignment logic to correctly map creator wallets to their corresponding roles based on the user's current NFT holdings.
