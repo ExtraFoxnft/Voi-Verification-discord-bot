@@ -1,63 +1,48 @@
-# Voi-Verification-discord-bot
-Voi Verification discord bot for verifying ownership of nfts.
----
+# Discord NFT Verification Bot
 
-# Discord NFT Ownership Verifier
-
-This is a Discord bot that verifies ownership of NFTs (Non-Fungible Tokens) on a specified blockchain network and grants users a specific role upon successful verification.
+This Discord bot verifies the ownership of NFTs stored in a user's wallet and grants users a specified role on Discord upon successful verification. It provides feedback to users through Discord messages and is customizable through environment variables.
 
 ## Features
 
 - **NFT Ownership Verification**: Users can verify their ownership of NFTs by providing their wallet address.
 - **Role Assignment**: Upon successful verification, users are assigned a specific role on the Discord server.
-- **Customizable Parameters**: The bot allows customization of parameters such as the API endpoint, API key, Discord bot token, and more through environment variables.
+- **Role Management**: The bot can add or remove roles based on the current NFT holdings of the user.
+- **User-Wallet Mapping**: Maintains a record of users and their associated wallet addresses to prevent multiple role assignments.
 
 ## Installation
 
-1. Clone the repository to your local machine:
-   
-2. Install the required dependencies:
-pip install discord
-pip install requests
-pip install python-dotenv
-pip install algosdk
+1. Clone the repository to your local machine.
+2. Install the required dependencies.
+3. Create a `.env` file in the root directory of the project and provide the necessary environment variables:
 
-3. Create a `.env` file in the root directory of the project and provide the following environment variables:
-
-    ```
-    API_KEY=your_api_key
-    API_BASE_URL=your_api_base_url
-    BOT_TOKEN=your_bot_token
-    GUILD_ID=your_guild_id
+    ```plaintext
+    # .env file
+    API_KEY=your_api_key_here
+    API_BASE_URL=https://api.example.com
+    BOT_TOKEN=your_discord_bot_token_here
+    GUILD_ID=your_discord_guild_id_here
+    CREATOR_WALLETS=wallet1,wallet2,wallet3
+    CREATOR_ROLES=role1,role2,role3
     ```
 
-    Make sure to replace `your_api_key`, `your_api_base_url`, `your_bot_token`, and `your_guild_id` with your actual values.
+    Replace the placeholders with your actual values:
+    - `your_api_key_here`: Your API key for the NFT indexer service.
+    - `https://api.example.com`: The base URL of the NFT indexer API.
+    - `your_discord_bot_token_here`: Your Discord bot token.
+    - `your_discord_guild_id_here`: The ID of your Discord server (guild).
+    - `wallet1,wallet2,wallet3`: The wallets associated with the creator roles, separated by commas.
+    - `role1,role2,role3`: The Discord roles to assign to users, corresponding to the creator wallets, separated by commas.
 
-4. Edit the `bot.py` file and specify the desired collection name and the role name:
-
-    ```
-    # Specify the collection name to verify
-    COLLECTION_NAME = "your_collection_name"  
-    
-    # Specify the role name to assign
-    ROLE_NAME = "Tester"  
-    ```
-
-5. Run the bot:
-
-    ```
-    python bot.py
-    ```
+4. Run the bot using the command `python bot.py`.
 
 ## Usage
 
-To use the bot, invite it to your Discord server and use the `!verify` command followed by your wallet address.
+Invite the bot to your Discord server and use the `!verify` command followed by your wallet address to verify NFT ownership.
 
 Example:
 
-```
 !verify <wallet_address>
-```
+
 
 ## Contributing
 
@@ -65,6 +50,4 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
+This project is licensed under the MIT License - see the LICENSE file for details.
