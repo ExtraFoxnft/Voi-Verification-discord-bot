@@ -1,5 +1,19 @@
-API_KEY=
-API_BASE_URL=https://arc72-idx.nftnavigator.xyz
-BOT_TOKEN=
-GUILD_ID=
+# .env file template
 
+# API key for the NFT indexer service
+API_KEY=your_api_key_here
+
+# Base URL of the NFT indexer API
+API_BASE_URL=https://api.example.com
+
+# Discord bot token
+BOT_TOKEN=your_discord_bot_token_here
+
+# Discord server (guild) ID
+GUILD_ID=your_discord_guild_id_here
+
+# Creator wallets, separated by commas
+CREATOR_WALLETS=wallet1,wallet2,wallet3
+
+# Corresponding Discord roles, separated by commas
+CREATOR_ROLES=role1,role2,role3
