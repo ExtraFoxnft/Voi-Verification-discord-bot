@@ -4,7 +4,7 @@
 API_KEY=your_api_key_here
 
 # Base URL of the NFT indexer API
-API_BASE_URL=https://api.example.com
+API_BASE_URL=https://arc72-idx.nftnavigator.xyz
 
 # Discord bot token
 BOT_TOKEN=your_discord_bot_token_here
